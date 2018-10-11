@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Atividade 1 Kotlin</string>
+    <string name="tvText1">Gasolina</string>
+    <string name="tvText2">Etanol</string>
+    <string name="btnCalculate">Calcular</string>
+    <string name="resultGas">A melhor escolha é Gasolina</string>
+    <string name="resultAlc">A melhor escolha é Etanol</string>
+    <string name="error">Preencha os campos corretamente</string>
+</resources>

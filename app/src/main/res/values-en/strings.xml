@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tvText1">Gasoline</string>
+    <string name="tvText2">Alcohol</string>
+    <string name="btnCalculate">Calculate</string>
+    <string name="app_name">Kotlin Lesson 1</string>
+    <string name="resultGas">The best choice is Gasoline</string>
+    <string name="resultAlc">The best choice is Alcohol</string>
+    <string name="error">Insert a valid imput</string>
+</resources>
