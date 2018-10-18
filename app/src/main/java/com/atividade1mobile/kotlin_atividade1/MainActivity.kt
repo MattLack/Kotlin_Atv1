@@ -11,18 +11,23 @@ class MainActivity : AppCompatActivity() {
 
     var result: Int? = 0
 
-    fun calculate(view: View?) {
-
+    fun calculate(view: View) {
         dicoverBest()
+        refreshText(this!!.result!!)
+    }
 
+
+    fun refreshText(result: Int){
         if (result == R.string.resultAlc)
             tvResult.text = getString(R.string.resultAlc)
         else if (result == R.string.resultGas)
             tvResult.text = getString(R.string.resultGas)
-        else if (result == 0)
+        else if (result == 0) {
+            tvResult.text = ""
             Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
-
+        }
     }
+
 
     private fun dicoverBest() {
 
@@ -42,10 +47,28 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("result", result!!)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        result = savedInstanceState.getInt("result")
+
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if ((savedInstanceState != null)
+                && (savedInstanceState.getInt("result") != null)){
+            refreshText(savedInstanceState.getInt("result"))
+        }
     }
 
 }
